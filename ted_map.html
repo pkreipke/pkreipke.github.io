@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title>Solar - 45 L</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+
+  <script type='text/javascript'>//<![CDATA[ 
+
+    $(function () {
+
+      //var filename = 'ted.csv'  // Local file, same folder
+      var filename = 'https://rawgit.com/Ted-Nadeau/datasets_original/master/Princeton_House_45L/Princeton_45L_Solar_SiteEnergyProduction_2012_12_18_2015_05_31.csv'
+
+      $.get(filename, function(csv) {
+        $('#container').highcharts({
+          chart: {
+            type: 'spline',
+            zoomType: "x"
+          },
+          credits: { 
+            enabled: false 
+          },
+          data: {
+            csv: csv,
+            dateFormat: "YYYY-mm-dd",
+            endRow: 895 // KLUDGE: till Ted fixes source file!!
+          },
+          title: {
+            text: 'Site Energy Production'
+          },
+          subtitle: {
+            text: '45 L'
+          }, 
+          yAxis: {
+            title: {
+              text: 'Watt Hrs'
+            }
+            , min: 0
+          },
+          series : [{
+            index: 0,
+            lineWidth: 1
+          }] // series
+
+        }); // .highcharts({})
+      }); // .get(function(csv,{}))
+    }); // $(function({}))
+
+  //]]>  
+
+  </script>
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/data.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+  <!-- Additional files for the Highslide popup effect -->
+
+  <div id="container" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+  
+</body>
+
+</html>
+
+
