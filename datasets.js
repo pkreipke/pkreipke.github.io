@@ -7,12 +7,14 @@ var datasets = {
 	addresses : {
 		label : 'Points',
 		file : 'addresses.json',
-		type : 'pointfile'
+		type : 'xpointfile'
 	},
 	freeB : {
 		label : "FreeB Bus Stops",
 		file : 'freeB.geojson',
-		type : 'pointfile'
+		type : 'pointfile',
+		color : 'green',
+		marker : 'http://upload.wikimedia.org/wikipedia/commons/3/36/Bus_stop_symbol.svg'
 	},
 
 	// Park envelopes
