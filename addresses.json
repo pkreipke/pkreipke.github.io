@@ -1,31 +1,28 @@
-{
-  "type": "FeatureCollection",
-  "features": [
+[
     {
       "type": "Feature",
       "properties": {
-        "name": "Community Park North"
+        "name": "77 Adams Drive"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.66965198516846,
-          40.36057422830908
+          -74.627388,
+          40.357913
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Community Park South"
+        "name": "101 Adams Drive"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.66708779335022,
-          40.35826060629204
+          -74.628958,
+          40.357652
         ]
       }
     }
-  ]
-}
+]
