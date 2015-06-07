@@ -11,9 +11,8 @@ var datasets = {
 	},
 	freeB : {
 		label : "FreeB Bus Stops",
-		file : 'freeb.geojson',
-		type : 'pointfile',
-		marker : ''
+		file : 'freeB.geojson',
+		type : 'pointfile'
 	},
 
 	// Park envelopes
