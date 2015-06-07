@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>ptonWalks - Presentation</title>
+  	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  	<title>ptonWalks - Presentation</title>
 
-	<!-- Bootstrap -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  	<!-- Bootstrap -->
+  	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
     <!-- Custom styles for this template -->
     <link href="slides/slide-template.css" rel="stylesheet">
@@ -26,14 +26,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="presentation.html">ptonWalks</a>
+          <a class="navbar-brand" href="presentation.html">ptonWalks - slide <span id="debug"></span></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+          <span id="debug"></span>
           <ul class="nav navbar-nav">
           	<li><a id="prev" href="#"><span class="glyphicon glyphicon-menu-left"></span></a></li>
-            <li class="active"><a class="nav-go" href="#1">1</a></li>
+
+          	<!-- SLIDES GO HERE -->
+            <li xclass="active"><a class="nav-go" href="#1">1</a></li>
             <li><a class="nav-go" href="#2">2</a></li>
             <li><a class="nav-go" href="#3">3</a></li>
+            <li><a class="nav-go" href="#4">4</a></li>
+            <li><a class="nav-go" href="#5">5</a></li>
+            <li><a class="nav-go" href="#6">6</a></li>
+            <li><a class="nav-go" href="#7">7</a></li>
+            <li><a class="nav-go" href="#8">8</a></li>
 
             <!-- ADD NEW SLIDES ABOVE THIS LINE -->
           	<li><a id="next" href="#"><span class="glyphicon glyphicon-menu-right"></span></a></li>
@@ -43,7 +51,7 @@
     </nav>
 
   	<div class="col-md-1"><!--Empty--></div>
-  	<div class="col-md-10 text-center">Middle <span id="debug"></span>
+  	<div class="col-md-10 text-center">
   		<div class="embed-responsive embed-responsive-4by3">
 	    	<iframe class="embed-responsive-item">No data</iframe>
 	    </div>
@@ -69,9 +77,10 @@
 	    	$('iframe').attr('src', src);
 
 	    	// Update prev and next
-	    	$('#prev').attr('href', '#' + (currentPage - 1))
-	    	$('#next').attr('href', '#' + (currentPage + 1))
-	    }
+	    	$('#prev').attr('href', '#' + currentPage)
+	    	$('#next').attr('href', '#' + currentPage)
+    		$('#debug').text(currentPage)
+		}
 
 
 	    // What to launch on reload?
@@ -83,7 +92,7 @@
 		        currentPage += 1;
 		        navToSlide(currentPage);
 		    });
-		    $('#previous').click(function(){
+		    $('#prev').click(function(){
 		        currentPage -= 1;
 		        navToSlide(currentPage);
 		    });

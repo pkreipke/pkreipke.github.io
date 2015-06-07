@@ -20,10 +20,22 @@ function mapGeoJSONPoints(datasetValue, map, onCompleteFunction)
 function mapGeoJSONShapes(datasetValue, map, onCompleteFunction)
 {
   $.getJSON(datasetValue.file, function(data) {
+      var myStyle = {
+          "weight" : 1,
+          "opacity" : 0.5
+      };
+      if ('undefined' != typeof(datasetValue.color)) {
+        myStyle.color = datasetValue.color
+      }
+      if ('undefined' != typeof(datasetValue.fillColor)) {
+        myStyle.fillColor = datasetValue.fillColor
+      }
+
       var geojson = L.geoJson(data, {
         onEachFeature: function (feature, layer) {
           // layer.bindPopup(feature.properties.name);
-        }
+        },
+        style : myStyle
       });
 
       geojson.addTo(map);

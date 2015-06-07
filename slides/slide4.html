@@ -12,7 +12,7 @@
     <title>ptonWalks - Slide</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="slide-template.css" rel="stylesheet">
@@ -22,15 +22,11 @@
     <div class="container lead"> <!-- 'lead' is good text font and size -->
       <div class="starter-template">
 
-        <h1>The Question</h1>
 
-        <p id="question">How many Princeton residents live within 10 minutes of a park?</p>
+        <h1>Title</h1>
 
-        <span id="answerGroup" class="hidden">
-          <h2>The Answer</h2>
+        <div>Content</div>
 
-          <p id="answer">42</p>
-        </span>
 
       </div>
     </div><!-- /.container -->
@@ -40,19 +36,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-
-        $('#question').click(function(event){
-          $("#answerGroup").removeClass('hidden');
-        });
-
-        $('#answer').click(function(event){
-          $(event.target).text("2345")
-        });
-
-      })
-    </script>
   </body>
 </html>
 
