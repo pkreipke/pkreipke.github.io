@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>ptonWalks - Presentation</title>
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="slides/slide-template.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="presentation.html">ptonWalks</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          	<li><a id="prev" href="#"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+            <li class="active"><a class="nav-go" href="#1">1</a></li>
+            <li><a class="nav-go" href="#2">2</a></li>
+            <li><a class="nav-go" href="#3">3</a></li>
+
+            <!-- ADD NEW SLIDES ABOVE THIS LINE -->
+          	<li><a id="next" href="#"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  	<div class="col-md-1"><!--Empty--></div>
+  	<div class="col-md-10 text-center">Middle <span id="debug"></span>
+  		<div class="embed-responsive embed-responsive-4by3">
+	    	<iframe class="embed-responsive-item">No data</iframe>
+	    </div>
+	</div>
+	<div class="col-md-1"><!--Empty--></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+	    var slideBaseURL = './slides/slide'
+    	var hashPage = location.hash.slice(1)
+		$('#debug').text(hashPage)
+	    var currentPage = hashPage;
+
+	    function navToSlide(num)
+	    {
+	    	// Remember which page
+	    	currentPage = parseInt(num)
+	    	var src = slideBaseURL + currentPage +'.html'
+	    	$('iframe').attr('src', src);
+
+	    	// Update prev and next
+	    	$('#prev').attr('href', '#' + (currentPage - 1))
+	    	$('#next').attr('href', '#' + (currentPage + 1))
+	    }
+
+
+	    // What to launch on reload?
+        navToSlide(currentPage);
+
+		$(document).ready(function () {
+
+		    $('#next').click(function(){
+		        currentPage += 1;
+		        navToSlide(currentPage);
+		    });
+		    $('#previous').click(function(){
+		        currentPage -= 1;
+		        navToSlide(currentPage);
+		    });
+
+		    $('a.nav-go').click(function(event){
+		    	var nextPage = $(event.target).attr('href').slice(1)
+		    	navToSlide(nextPage)
+		    })
+		});
+    </script>
+  </body>
+</html>
